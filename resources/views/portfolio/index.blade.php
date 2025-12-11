@@ -98,7 +98,7 @@
                             @endforeach
                         </div>
 
-                        <a href="#" class="inline-flex items-center text-secondary font-medium text-sm group">
+                        <a href="{{ route('portfolio.show', $project['slug']) }}" class="inline-flex items-center text-secondary font-medium text-sm group">
                             <span class="transition-transform duration-300 group-hover:-translate-x-1">View Case Study</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
