@@ -1,0 +1,51 @@
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.backup
+.env.production
+.env.example
+auth.json
+
+# IDE / Editor
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+
+# Node / Build
+/node_modules
+/public/build
+/public/hot
+/public/mix-manifest.json
+
+# Laravel storage (runtime files)
+public/storage
+/storage/*.key
+/storage/pail
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+
+# Laravel bootstrap
+/bootstrap/cache/*.php
+
+# Vendors
+/vendor
+
+# Homestead
+Homestead.json
+Homestead.yaml
+/Design
