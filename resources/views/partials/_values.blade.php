@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12">
             <h2 class="text-2xl md:text-3xl font-bold leading-tight text-body">Our Core Values</h2>
-            <p class="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">The principles that guide every decision and action we take, shaping our culture and impact.</p>
+            <p class="text-gray-500 mt-4 text-base max-w-2xl mx-auto">The principles that guide how we think, build, and partner with our clients.</p>
         </div>
 
         <!-- Modern grid with gradient cards -->
@@ -18,7 +18,7 @@
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Innovation</h3>
-                        <p class="text-gray-700 text-sm leading-relaxed">We embrace creative thinking and push boundaries to deliver cutting-edge solutions that transform industries.</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">We apply creativity and emerging technologies to design smarter, future-ready digital solutions.</p>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Integrity</h3>
-                        <p class="text-gray-700 text-sm leading-relaxed">Honesty and transparency are the foundation of everything we do and all our relationships with clients.</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">We operate with transparency, accountability, and trust in every client relationship.</p>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Collaboration</h3>
-                        <p class="text-gray-700 text-sm leading-relaxed">Together we achieve more. We believe in teamwork, partnership, and shared success across all projects.</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">We work closely with our clients as partners, aligning technology with real business goals.</p>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Excellence</h3>
-                        <p class="text-gray-700 text-sm leading-relaxed">We set high standards and consistently deliver quality in all that we accomplish every single day.</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">We are committed to quality, precision, and performance in every solution we deliver.</p>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Impact</h3>
-                        <p class="text-gray-700 text-sm leading-relaxed">We measure success by the positive difference we make for our clients, communities, and the world.</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">We focus on measurable results that create meaningful and lasting business value.</p>
                     </div>
                 </div>
             </div>
@@ -97,8 +97,8 @@
                                 <path d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Learning</h3>
-                        <p class="text-gray-700 text-sm leading-relaxed">We stay curious, adapt to change, and continuously improve our skills and knowledge together.</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Continuous Learning</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">We continuously evolve our skills to stay ahead in a rapidly changing digital landscape.</p>
                     </div>
                 </div>
             </div>

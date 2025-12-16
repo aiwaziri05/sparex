@@ -12,15 +12,15 @@
         <!-- Subtle Grid Background -->
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff1a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff1a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-blue-600 opacity-20 blur-[100px]"></div>
-        <div class="absolute right-0 top-0 -z-10 h-full w-1/2 bg-gradient-to-b from-transparent to-slate-900/50"></div>
+        <div class="absolute right-0 top-0 -z-10 h-full w-1/2 bg-linear-to-b from-transparent to-slate-900/50"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="max-w-3xl">
                 <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
-                    Latest <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Insights.</span>
+                    Latest <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-400">Insights.</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-400 leading-relaxed font-light mb-10">
-                    Stay updated with industry trends, expert analysis, and best practices from our team.
+                Stay updated with practical guidance, industry trends, and insights from the Sparex team on digital transformation, automation, and data-driven business solutions.
                 </p>
                 
                 <a href="#subscribe" class="inline-flex w-full sm:w-auto items-center justify-center gap-3 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 group">

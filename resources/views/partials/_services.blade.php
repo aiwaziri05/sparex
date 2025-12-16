@@ -3,7 +3,7 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-12">
       <h2 class="text-2xl md:text-3xl font-bold leading-tight text-body">Our Services</h2>
-      <p class="text-gray-500 mt-3 text-base max-w-2xl mx-auto">Comprehensive solutions designed to transform your business</p>
+      <p class="text-gray-500 mt-3 text-base max-w-2xl mx-auto">End-to-end digital solutions designed to streamline operations and drive smarter decisions.</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -15,7 +15,7 @@
           </div>
           <div>
             <h3 class="font-semibold text-base">Custom Software Development</h3>
-            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Bespoke applications built to match your business processes and scale with you.</p>
+            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Bespoke applications built around your workflows to improve efficiency and scale with your business.</p>
           </div>
         </div>
       </article>
@@ -28,7 +28,7 @@
           </div>
           <div>
             <h3 class="font-semibold text-base">Digital SOP Systems</h3>
-            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Standardize operations with digital Standard Operating Procedure systems for consistency.</p>
+            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Digitize and standardize operating procedures to ensure consistency and compliance.</p>
           </div>
         </div>
       </article>
@@ -41,7 +41,7 @@
           </div>
           <div>
             <h3 class="font-semibold text-base">Workflow Automation</h3>
-            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Automate repetitive tasks to reduce manual work and accelerate delivery.</p>
+            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Automate repetitive processes to reduce manual effort and accelerate delivery.</p>
           </div>
         </div>
       </article>
@@ -54,7 +54,7 @@
           </div>
           <div>
             <h3 class="font-semibold text-base">Data Management</h3>
-            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Reliable data pipelines, storage and governance for accurate insights.</p>
+            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Secure data pipelines, storage, and governance for reliable insights.</p>
           </div>
         </div>
       </article>
@@ -67,7 +67,7 @@
           </div>
           <div>
             <h3 class="font-semibold text-base">Document Digitalization</h3>
-            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Convert paper workflows into searchable, auditable digital records.</p>
+            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Transform paper-based processes into searchable, auditable digital records.</p>
           </div>
         </div>
       </article>
@@ -80,7 +80,7 @@
           </div>
           <div>
             <h3 class="font-semibold text-base">IT Infrastructure Advisory</h3>
-            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Expert guidance to design resilient, cost-effective IT infrastructure.</p>
+            <p class="text-sm text-gray-600 mt-2 leading-relaxed">Expert guidance to design resilient, scalable, and cost-effective infrastructure.</p>
           </div>
         </div>
       </article>

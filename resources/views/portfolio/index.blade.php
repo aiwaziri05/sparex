@@ -11,20 +11,20 @@
     <!-- Header Section -->
     <section class="relative pt-24 pb-16 lg:pt-32 lg:pb-20 bg-slate-900 overflow-hidden">
         <!-- Subtle Grid Background -->
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff1a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff1a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff1a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff1a_1px,transparent_1px)] bg-size-[24px_24px]"></div>
         <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-blue-600 opacity-20 blur-[100px]"></div>
-        <div class="absolute right-0 top-0 -z-10 h-full w-1/2 bg-gradient-to-b from-transparent to-slate-900/50"></div>
+        <div class="absolute right-0 top-0 -z-10 h-full w-1/2 bg-linear-to-b from-transparent to-slate-900/50"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="max-w-3xl">
                 <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
-                    We build <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">digital excellence.</span>
+                    Delivering <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-400">Digital Excellence.</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-400 leading-relaxed font-light mb-10">
-                    Explore our curated portfolio of transformative digital products, from enterprise dashboards to consumer mobile apps.
+                Explore our portfolio of digital solutions from dashboards to mobile apps designed to streamline operations and drive measurable results.
                 </p>
                 
-                <a href="/contact" class="inline-flex items-center gap-3 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 group">
+                <a href="/contact" class="inline-flex items-center gap-3 px-8 py-4 text-base font-semibold text-white bg-linear-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 group">
                     Start a Project
                     <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -59,7 +59,7 @@
                     class="portfolio-card group overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300"
                 >
                     <!-- Image Area -->
-                    <div class="relative h-48 overflow-hidden bg-gradient-to-br from-{{ $project['color'] }}-50 to-{{ $project['color'] }}-100 group-hover:scale-105 transition-transform duration-500">
+                    <div class="relative h-48 overflow-hidden bg-linear-to-br from-{{ $project['color'] }}-50 to-{{ $project['color'] }}-100 group-hover:scale-105 transition-transform duration-500">
                          <!-- Fallback directly to component or image based on what's available. 
                               Since we are ensuring this works, we'll try to use the image assets if they exist, 
                               or a colored placeholder if not. -->

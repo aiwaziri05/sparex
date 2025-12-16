@@ -9,7 +9,7 @@
             <span class="text-2xl font-bold tracking-tight">Sparex</span>
         </div>
         <p class="text-gray-400 leading-relaxed max-w-sm">
-          Empowering enterprises with data-driven insights and intelligent automation. We build the technology that powers your growth.
+          Empowering businesses with practical digital solutions that improve operations and support growth.
         </p>
         <div class="flex items-center gap-4 pt-2">
             <!-- Social Links -->
@@ -33,9 +33,9 @@
         <h3 class="text-white font-semibold tracking-wide mb-6">Solutions</h3>
         <ul class="space-y-4 text-gray-400">
           <li><a href="#" class="hover:text-white transition-colors">Data Analytics</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Automation</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">AI Consulting</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Cloud Infrastructure</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Workflow Automation</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Software Solutions</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">IT Infrastructure</a></li>
         </ul>
       </div>
 
@@ -53,7 +53,7 @@
       <!-- Newsletter Column -->
       <div class="col-span-1 lg:col-span-4">
         <h3 class="text-white font-semibold tracking-wide mb-6">Stay Updated</h3>
-        <p class="text-gray-400 text-sm mb-4">Subscribe to our newsletter for the latest AI trends and company updates.</p>
+        <p class="text-gray-400 text-sm mb-4">Subscribe to our newsletter for updates on digital solutions, workflow automation, and company news.</p>
         <form class="flex flex-col sm:flex-row gap-3">
             <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
             <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-300">

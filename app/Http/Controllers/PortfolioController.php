@@ -16,8 +16,8 @@ class PortfolioController extends Controller
             'Mobile Apps',
             'Dashboards',
             'System Automation',
-            'Data Engineering',
-            'Cloud Infrastructure'
+            'Data Analytics',
+            'IT Infrastructure'
         ];
 
         return view('portfolio.index', compact('projects', 'categories'));
@@ -83,7 +83,7 @@ class PortfolioController extends Controller
             [
                 'title' => 'Retail Data Warehouse',
                 'slug' => 'retail-data-warehouse',
-                'category' => 'Data Engineering',
+                'category' => 'Data Analytics',
                 'description' => 'Unified data warehouse solution aggregating sales data from 500+ stores for real-time reporting.',
                 'content' => '<h2>Project Overview</h2><p>Built a scalable data warehouse that processes millions of transactions daily from retail locations worldwide.</p><h3>Technical Highlights</h3><ul><li>Real-time data ingestion</li><li>Advanced analytics dashboards</li><li>Predictive inventory modeling</li><li>Custom reporting engine</li></ul>',
                 'image' => 'portfolio-analytics',
@@ -103,7 +103,7 @@ class PortfolioController extends Controller
             [
                 'title' => 'Hybrid Cloud Migration',
                 'slug' => 'hybrid-cloud-migration',
-                'category' => 'Cloud Infrastructure',
+                'category' => 'IT Infrastructure',
                 'description' => 'Comprehensive roadmap and execution of migrating on-premise servers to Azure hybrid cloud environment.',
                 'content' => '<h2>Project Overview</h2><p>Led the strategic migration of enterprise infrastructure to a hybrid cloud model with zero downtime.</p><h3>Migration Phases</h3><ul><li>Infrastructure assessment and planning</li><li>Phased migration strategy</li><li>Security and compliance implementation</li><li>Performance optimization</li></ul>',
                 'image' => 'portfolio-ai',

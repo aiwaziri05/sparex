@@ -17,8 +17,8 @@
     <!-- Desktop Navigation -->
     <nav class="hidden lg:flex items-center gap-1">
       <a href="/" class="nav-link {{ request()->routeIs('home') ? 'text-blue-600 font-semibold' : '' }}">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#services" class="nav-link">Services</a>
+      <a href="/#about" class="nav-link">About</a>
+      <a href="/#services" class="nav-link">Services</a>
       <a href="/portfolio" class="nav-link {{ request()->routeIs('portfolio') ? 'text-blue-600 font-semibold' : '' }}">Portfolio</a>
       <a href="/blog" class="nav-link {{ request()->routeIs('blog*') ? 'text-blue-600 font-semibold' : '' }}">Blog</a>
     </nav>

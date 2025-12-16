@@ -14,7 +14,7 @@
             <div class="text-xs text-gray-500">COO, Innovate Inc.</div>
           </div>
         </div>
-        <p class="text-gray-700 text-base flex-1 italic">“TechSolution's platform transformed our operations. The intelligent features are game-changers, driving significant efficiency gains.”</p>
+        <p class="text-gray-700 text-base flex-1 italic">“Sparex's platform transformed our operations. Intelligent workflows reduced errors and improved efficiency across teams.”</p>
         <div class="mt-6 flex items-center gap-2 text-blue-500 text-xs font-semibold">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z" />
@@ -31,7 +31,7 @@
             <div class="text-xs text-gray-500">Head of Analytics, DataCorp</div>
           </div>
         </div>
-        <p class="text-gray-700 text-base flex-1 italic">“The Sparex team delivered beyond expectations. Their AI solutions gave us a competitive edge and the support was outstanding.”</p>
+        <p class="text-gray-700 text-base flex-1 italic">“The Sparex team delivered beyond expectations. Their solutions streamlined our processes and the support was outstanding.”</p>
         <div class="mt-6 flex items-center gap-2 text-emerald-500 text-xs font-semibold">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z" />
@@ -48,7 +48,7 @@
             <div class="text-xs text-gray-500">CTO, FutureRetail</div>
           </div>
         </div>
-        <p class="text-gray-700 text-base flex-1 italic">“We saw a 40% reduction in manual work and a huge boost in forecast accuracy. Highly recommend their expertise!”</p>
+        <p class="text-gray-700 text-base flex-1 italic">“We saw a 40% reduction in manual work and more accurate business forecasts. Highly recommend their expertise!”</p>
         <div class="mt-6 flex items-center gap-2 text-amber-500 text-xs font-semibold">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z" />

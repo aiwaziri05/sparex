@@ -2,10 +2,10 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="rounded-3xl p-8 bg-white/60 border border-gray-100 shadow-lg backdrop-blur-sm flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex-1 text-center md:text-left">
-        <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">Trusted by teams worldwide</h2>
-        <p class="text-gray-500 mt-2 max-w-xl">We deliver measurable outcomes — from automated workflows to AI-driven insights. Join the companies that rely on us to scale with confidence.</p>
+        <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">Trusted by Growing Businesses</h2>
+        <p class="text-gray-500 mt-2 max-w-xl">We support organizations with practical digital solutions from workflow automation to data-driven systems helping teams operate efficiently and scale with confidence.</p>
         <div class="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-start gap-3 w-full">
-          <a href="#contact" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 group">
+          <a href="/contact" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-linear-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 group">
             Get Started
             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
