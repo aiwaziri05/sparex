@@ -1,4 +1,4 @@
-<section class="min-h-screen flex items-center py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+<section class="pt-16 md:pt-24 pb-14 md:pb-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
     <div class="max-w-7xl mx-auto px-6 w-full">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
