@@ -23,7 +23,7 @@
                     Stay updated with industry trends, expert analysis, and best practices from our team.
                 </p>
                 
-                <a href="#subscribe" class="inline-flex items-center gap-3 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 group">
+                <a href="#subscribe" class="inline-flex w-full sm:w-auto items-center justify-center gap-3 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 group">
                     Subscribe to Newsletter
                     <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -71,7 +71,7 @@
                                 <span class="text-sm font-semibold text-gray-700">{{ $post['date'] }}</span>
                             </div>
                             
-                            <a href="#" class="inline-flex items-center text-secondary font-medium text-sm group">
+                            <a href="{{ route('blog.show', $post['slug']) }}" class="inline-flex items-center text-secondary font-medium text-sm group">
                                 <span class="transition-transform duration-300 group-hover:-translate-x-1">Read More</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

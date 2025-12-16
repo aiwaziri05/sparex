@@ -98,7 +98,7 @@
     </div>
 
     <div class="text-center mt-12">
-      <a href="#" class="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-secondary bg-white border-2 border-secondary/10 rounded-xl hover:bg-secondary/5 hover:border-secondary hover:shadow-lg transition-all duration-300 group">
+      <a href="{{ route('blog') }}" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-secondary bg-white border-2 border-secondary/10 rounded-xl hover:bg-secondary/5 hover:border-secondary hover:shadow-lg transition-all duration-300 group">
         View All Articles
         <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
