@@ -53,13 +53,15 @@
       <!-- Newsletter Column -->
       <div class="col-span-1 lg:col-span-4">
         <h3 class="text-white font-semibold tracking-wide mb-6">Stay Updated</h3>
-        <p class="text-gray-400 text-sm mb-4">Subscribe to our newsletter for updates on digital solutions, workflow automation, and company news.</p>
-        <form class="flex flex-col sm:flex-row gap-3">
-            <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
-            <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-300">
+        <p class="text-gray-400 text-sm mb-2">Subscribe to our newsletter for updates on digital solutions, workflow automation, and company news.</p>
+        <p class="text-gray-500 text-xs mb-4">You’ll receive an email to confirm your subscription (double opt-in).</p>
+        <form id="footer-newsletter-form" class="flex flex-col sm:flex-row gap-3">
+            <input id="footer-newsletter-email" type="email" name="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            <button type="submit" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-300">
                 Subscribe
             </button>
         </form>
+        <p id="footer-newsletter-message" class="mt-2 text-xs text-gray-400"></p>
       </div>
     </div>
 
