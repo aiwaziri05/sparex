@@ -121,13 +121,6 @@
         </div>
     </section>
 
-    <!-- Social Proof (Optional Repeater) -->
-    <div class="bg-slate-50 py-20 border-t border-slate-200">
-        <div class="text-center mb-10">
-            <p class="text-gray-500 font-medium">Trusted by innovative teams worldwide</p>
-        </div>
-        @include('partials._social-proof')
-    </div>
 </main>
 
 <x-footer />
