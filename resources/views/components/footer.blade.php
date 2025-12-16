@@ -29,7 +29,7 @@
       </div>
 
       <!-- Links Column 1 -->
-      <div class="lg:col-span-2 md:col-span-4 col-span-6">
+      <div class="col-span-1 md:col-span-4 lg:col-span-2">
         <h3 class="text-white font-semibold tracking-wide mb-6">Solutions</h3>
         <ul class="space-y-4 text-gray-400">
           <li><a href="#" class="hover:text-white transition-colors">Data Analytics</a></li>
@@ -40,7 +40,7 @@
       </div>
 
       <!-- Links Column 2 -->
-      <div class="lg:col-span-2 md:col-span-4 col-span-6">
+      <div class="col-span-1 md:col-span-4 lg:col-span-2">
         <h3 class="text-white font-semibold tracking-wide mb-6">Company</h3>
         <ul class="space-y-4 text-gray-400">
           <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
@@ -51,7 +51,7 @@
       </div>
 
       <!-- Newsletter Column -->
-      <div class="lg:col-span-4">
+      <div class="col-span-1 lg:col-span-4">
         <h3 class="text-white font-semibold tracking-wide mb-6">Stay Updated</h3>
         <p class="text-gray-400 text-sm mb-4">Subscribe to our newsletter for the latest AI trends and company updates.</p>
         <form class="flex flex-col sm:flex-row gap-3">
