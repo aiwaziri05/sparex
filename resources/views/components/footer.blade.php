@@ -5,8 +5,7 @@
       <!-- Brand & Description -->
       <div class="lg:col-span-4 space-y-6">
         <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-900/20">S</div>
-            <span class="text-2xl font-bold tracking-tight">Sparex</span>
+            <img src="{{ asset('assets/images/logo_white.png') }}" alt="Sparex" class="h-16 w-auto object-contain">
         </div>
         <p class="text-gray-400 leading-relaxed max-w-sm">
           Empowering businesses with practical digital solutions that improve operations and support growth.

@@ -9,8 +9,7 @@
     <!-- Logo -->
     <div class="flex items-center space-x-3">
       <a href="/" class="flex items-center gap-2.5 group">
-        <div class="w-9 h-9 rounded-lg logo-circle flex items-center justify-center text-white font-bold text-sm transition-transform duration-200 group-hover:scale-110">S</div>
-        <span class="font-bold text-lg text-gray-900">Sparex</span>
+        <img src="{{ asset('assets/images/logo.png') }}" alt="Sparex" class="h-16 w-auto transition-transform duration-200 group-hover:scale-110 object-contain">
       </a>
     </div>
 

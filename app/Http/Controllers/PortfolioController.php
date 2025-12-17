@@ -27,23 +27,23 @@ class PortfolioController extends Controller
     {
         // Find project by slug (or index for now since we're using array)
         $projects = $this->getProjects();
-        
+
         $project = collect($projects)->firstWhere('slug', $slug);
-        
+
         if (!$project) {
             abort(404, 'Project not found');
         }
-        
+
         // Convert to object for easier access in view
         $project = (object) $project;
-        
+
         // Get related projects (same category, exclude current)
         $relatedProjects = collect($projects)
             ->where('category', $project->category)
             ->where('slug', '!=', $slug)
             ->take(3)
             ->toArray();
-        
+
         return view('portfolio.show', compact('project', 'relatedProjects'));
     }
 
