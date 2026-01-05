@@ -88,13 +88,24 @@
                 <div class="relative">
                     <div class="absolute inset-0 bg-blue-600 rounded-2xl opacity-[0.03] blur-2xl"></div>
                     <div class="relative bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 lg:p-10 shadow-2xl">
-                        <form action="#" method="POST" class="space-y-6">
+                        @if(session('success'))
+                            <div class="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-green-400">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
+                        <div id="contact-form-message" class="mb-6 hidden p-4 rounded-xl text-sm"></div>
+
+                        <form id="contact-form" action="{{ route('contact.store') }}" method="POST" class="space-y-6">
                             @csrf
                             <div class="space-y-2">
                                 <label for="name" class="text-sm font-medium text-gray-300">Full Name</label>
                                 <input type="text" id="name" name="name" 
                                     class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all hover:bg-slate-900"
                                     placeholder="John Doe" required>
+                                @error('name')
+                                    <p class="text-red-400 text-sm mt-1">{{ $message }}</p>
+                                @enderror
                             </div>
                             
                             <div class="space-y-2">
@@ -102,18 +113,24 @@
                                 <input type="email" id="email" name="email" 
                                     class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all hover:bg-slate-900"
                                     placeholder="john@company.com" required>
+                                @error('email')
+                                    <p class="text-red-400 text-sm mt-1">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div class="space-y-2">
                                 <label for="subject" class="text-sm font-medium text-gray-300">Subject</label>
                                 <select id="subject" name="subject" 
-                                    class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all hover:bg-slate-900">
+                                    class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all hover:bg-slate-900" required>
                                     <option value="" disabled selected>Select a topic</option>
                                     <option value="project">Start a Project</option>
                                     <option value="partnership">Partnership Inquiry</option>
                                     <option value="career">Careers</option>
                                     <option value="other">Other</option>
                                 </select>
+                                @error('subject')
+                                    <p class="text-red-400 text-sm mt-1">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div class="space-y-2">
@@ -121,11 +138,18 @@
                                 <textarea id="message" name="message" rows="4" 
                                     class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all hover:bg-slate-900 resize-none"
                                     placeholder="Tell us about your project..." required></textarea>
+                                @error('message')
+                                    <p class="text-red-400 text-sm mt-1">{{ $message }}</p>
+                                @enderror
                             </div>
 
-                            <button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-[1.02] transition-all duration-300">
-                                Send Message
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <button type="submit" id="submit-btn" class="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                                <span id="submit-text">Send Message</span>
+                                <svg id="submit-spinner" class="hidden w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                <svg id="submit-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
                             </button>
@@ -139,4 +163,86 @@
 </main>
 
 <x-footer />
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const messageEl = document.getElementById('contact-form-message');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const submitSpinner = document.getElementById('submit-spinner');
+    const submitIcon = document.getElementById('submit-icon');
+
+    function showMessage(text, type = 'success') {
+        messageEl.textContent = text;
+        messageEl.classList.remove('hidden', 'bg-green-500/10', 'border-green-500/20', 'text-green-400', 'bg-red-500/10', 'border-red-500/20', 'text-red-400');
+        
+        if (type === 'success') {
+            messageEl.classList.add('bg-green-500/10', 'border-green-500/20', 'text-green-400');
+        } else {
+            messageEl.classList.add('bg-red-500/10', 'border-red-500/20', 'text-red-400');
+        }
+    }
+
+    function setLoading(loading) {
+        if (loading) {
+            submitBtn.disabled = true;
+            submitText.textContent = 'Sending...';
+            submitSpinner.classList.remove('hidden');
+            submitIcon.classList.add('hidden');
+        } else {
+            submitBtn.disabled = false;
+            submitText.textContent = 'Send Message';
+            submitSpinner.classList.add('hidden');
+            submitIcon.classList.remove('hidden');
+        }
+    }
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        setLoading(true);
+        messageEl.classList.add('hidden');
+
+        const formData = new FormData(form);
+        
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json',
+                },
+            });
+
+            const data = await response.json().catch(() => ({}));
+
+            if (response.ok) {
+                showMessage(data.message || 'Thank you for your message! We will get back to you soon.', 'success');
+                form.reset();
+            } else {
+                let errorMessage = data.message || 'Something went wrong. Please try again.';
+                
+                if (data.errors) {
+                    const firstError = Object.values(data.errors)[0];
+                    if (Array.isArray(firstError)) {
+                        errorMessage = firstError[0];
+                    } else {
+                        errorMessage = firstError;
+                    }
+                }
+                
+                showMessage(errorMessage, 'error');
+            }
+        } catch (error) {
+            showMessage('Network error. Please check your connection and try again.', 'error');
+        } finally {
+            setLoading(false);
+        }
+    });
+});
+</script>
+@endpush
 @endsection

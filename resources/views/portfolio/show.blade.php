@@ -59,7 +59,7 @@
 
                     <!-- Project Details Content -->
                     <div class="prose prose-lg prose-slate max-w-none">
-                        {!! $project->content !!}
+                        {!! $project->long_description !!}
                     </div>
                     
                     <!-- Back Button -->

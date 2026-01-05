@@ -40,7 +40,7 @@
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <span>{{ $post->date }}</span>
+                    <span>{{ $post->published_at ? $post->published_at->format('M j, Y') : '' }}</span>
                 </div>
                 <span class="text-gray-500">•</span>
                 <div class="flex items-center gap-2">

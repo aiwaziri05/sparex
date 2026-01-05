@@ -17,6 +17,7 @@ Route::get('/portfolio/{slug}', [App\Http\Controllers\PortfolioController::class
 Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 
 // Newsletter subscription landing page
 Route::get('/newsletter', function () {

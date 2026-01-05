@@ -18,6 +18,8 @@
 
 <body class="antialiased bg-theme text-body">
   @yield('content')
+  
+  @stack('scripts')
 </body>
 
 </html>
