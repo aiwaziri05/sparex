@@ -90,7 +90,16 @@
 
                     <!-- Tags -->
                     <div class="flex flex-wrap gap-2 mb-4">
-                        @foreach($project->tags ?? [] as $tag)
+                        @php
+                            $tags = $project->tags ?? [];
+                            // Handle case where tags might be a string (backward compatibility)
+                            if (is_string($tags)) {
+                                $tags = json_decode($tags, true) ?? [];
+                            }
+                            // Ensure it's an array
+                            $tags = is_array($tags) ? $tags : [];
+                        @endphp
+                        @foreach($tags as $tag)
                         <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">#{{ $tag }}</span>
                         @endforeach
                     </div>

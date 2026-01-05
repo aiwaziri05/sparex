@@ -16,7 +16,16 @@
                     {{ $post->category }}
                 </span>
                 <div class="flex flex-wrap gap-2">
-                    @foreach($post->tags as $tag)
+                    @php
+                        $tags = $post->tags ?? [];
+                        // Handle case where tags might be a string (backward compatibility)
+                        if (is_string($tags)) {
+                            $tags = json_decode($tags, true) ?? [];
+                        }
+                        // Ensure it's an array
+                        $tags = is_array($tags) ? $tags : [];
+                    @endphp
+                    @foreach($tags as $tag)
                         <span class="px-2 py-1 rounded-md bg-white/5 text-gray-400 text-xs border border-white/10">
                             {{ $tag }}
                         </span>
