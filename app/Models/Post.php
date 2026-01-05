@@ -22,12 +22,14 @@ class Post extends Model
         'author',
         'tags',
         'is_published',
+        'show_on_homepage',
         'published_at',
     ];
 
     protected $casts = [
         'tags' => 'array',
         'is_published' => 'boolean',
+        'show_on_homepage' => 'boolean',
         'published_at' => 'datetime',
     ];
 

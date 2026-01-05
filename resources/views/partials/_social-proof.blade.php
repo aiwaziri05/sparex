@@ -44,23 +44,37 @@
       <div class="relative overflow-hidden">
         <div class="absolute left-0 top-0 w-full h-full pointer-events-none bg-gradient-to-r from-white via-transparent to-white z-10"></div>
         <div class="logo-slider flex items-center gap-12 animate-logo-scroll py-2">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Spotify_logo_with_text.svg" alt="Spotify" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Apple_logo_black.svg" alt="Apple" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Meta-Logo.png" alt="Meta" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
+          @forelse($companyLogos ?? [] as $logo)
+            @if($logo->website_url)
+              <a href="{{ $logo->website_url }}" target="_blank" rel="noopener noreferrer">
+            @endif
+            @if(filter_var($logo->logo, FILTER_VALIDATE_URL))
+              <img src="{{ $logo->logo }}" alt="{{ $logo->name }}" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
+            @else
+              <img src="{{ asset('storage/' . $logo->logo) }}" alt="{{ $logo->name }}" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
+            @endif
+            @if($logo->website_url)
+              </a>
+            @endif
+          @empty
+            <p class="text-gray-400 text-sm">No company logos available.</p>
+          @endforelse
           <!-- Repeat for seamless loop -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Spotify_logo_with_text.svg" alt="Spotify" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Apple_logo_black.svg" alt="Apple" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Meta-Logo.png" alt="Meta" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
+          @if(isset($companyLogos) && count($companyLogos ?? []) > 0)
+            @foreach($companyLogos as $logo)
+              @if($logo->website_url)
+                <a href="{{ $logo->website_url }}" target="_blank" rel="noopener noreferrer">
+              @endif
+              @if(filter_var($logo->logo, FILTER_VALIDATE_URL))
+                <img src="{{ $logo->logo }}" alt="{{ $logo->name }}" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
+              @else
+                <img src="{{ asset('storage/' . $logo->logo) }}" alt="{{ $logo->name }}" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
+              @endif
+              @if($logo->website_url)
+                </a>
+              @endif
+            @endforeach
+          @endif
         </div>
       </div>
       <p class="text-center text-xs text-gray-400 mt-4">Logos and case studies available on request.</p>

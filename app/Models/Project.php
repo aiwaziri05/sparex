@@ -26,6 +26,7 @@ class Project extends Model
         'duration',
         'team_size',
         'is_published',
+        'show_on_homepage',
         'published_at',
     ];
 
@@ -35,6 +36,7 @@ class Project extends Model
         'features' => 'array',
         'images' => 'array',
         'is_published' => 'boolean',
+        'show_on_homepage' => 'boolean',
         'published_at' => 'datetime',
     ];
 

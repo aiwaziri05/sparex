@@ -25,6 +25,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ProjectSeeder::class,
             PostSeeder::class,
+            CoreValueSeeder::class,
+            ServiceSeeder::class,
+            CompanyLogoSeeder::class,
+            TestimonialSeeder::class,
         ]);
     }
 }

@@ -49,6 +49,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 'Content',
+                'Page Content',
                 'Communications',
                 'Users & Permissions',
             ])

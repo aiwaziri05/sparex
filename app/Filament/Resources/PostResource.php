@@ -142,6 +142,10 @@ class PostResource extends Resource
                         Forms\Components\Toggle::make('is_published')
                             ->default(true)
                             ->label('Published'),
+                        Forms\Components\Toggle::make('show_on_homepage')
+                            ->default(false)
+                            ->label('Show on Homepage')
+                            ->helperText('Display this post on the homepage'),
                         Forms\Components\DateTimePicker::make('published_at')
                             ->default(now())
                             ->displayFormat('d/m/Y H:i')
@@ -181,6 +185,10 @@ class PostResource extends Resource
                 Tables\Columns\IconColumn::make('is_published')
                     ->boolean()
                     ->label('Published')
+                    ->sortable(),
+                Tables\Columns\IconColumn::make('show_on_homepage')
+                    ->boolean()
+                    ->label('Homepage')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('published_at')
                     ->dateTime('M j, Y')
