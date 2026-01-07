@@ -1,5 +1,5 @@
-<header 
-  x-data="{ scrolled: false, mobileMenuOpen: false }" 
+<header
+  x-data="{ scrolled: false, mobileMenuOpen: false }"
   @scroll.window="scrolled = window.pageYOffset > 20"
   :class="scrolled ? 'shadow-sm bg-white/70 backdrop-blur-xl' : 'bg-transparent'"
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent"
@@ -25,12 +25,12 @@
     <!-- Desktop CTA -->
     <div class="hidden lg:flex items-center">
       <a href="/contact" class="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300">
-        Get Started
+        Get a Quote
       </a>
     </div>
 
     <!-- Mobile Menu Button -->
-    <button 
+    <button
       @click="mobileMenuOpen = !mobileMenuOpen"
       class="lg:hidden p-2 text-gray-700 hover:text-secondary transition-colors"
       aria-label="Toggle menu"
@@ -45,8 +45,8 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div 
-    x-show="mobileMenuOpen" 
+  <div
+    x-show="mobileMenuOpen"
     x-transition:enter="transition ease-out duration-200"
     x-transition:enter-start="opacity-0 -translate-y-4"
     x-transition:enter-end="opacity-100 translate-y-0"
@@ -62,10 +62,10 @@
       <a href="#services" class="nav-link-mobile" @click="mobileMenuOpen = false">Services</a>
       <a href="/portfolio" class="nav-link-mobile {{ request()->routeIs('portfolio') ? 'text-blue-600 font-semibold' : '' }}" @click="mobileMenuOpen = false">Portfolio</a>
       <a href="/blog" class="nav-link-mobile {{ request()->routeIs('blog*') ? 'text-blue-600 font-semibold' : '' }}" @click="mobileMenuOpen = false">Blog</a>
-      
+
       <div class="mt-4 pt-4 border-t border-white/20">
         <a href="/contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 w-full" @click="mobileMenuOpen = false">
-          Get Started
+          Get a Quote
         </a>
       </div>
     </nav>

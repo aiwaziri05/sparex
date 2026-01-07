@@ -1,7 +1,7 @@
 <section class="pt-16 md:pt-24 pb-14 md:pb-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
     <div class="max-w-7xl mx-auto px-6 w-full">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+
             <!-- Left Column: Text Content -->
             <div class="space-y-8 lg:col-span-1">
                 <div class="space-y-2">
@@ -16,10 +16,10 @@
                         We design intelligent systems that reduce manual work, improve efficiency, and drive measurable results.
                     </p>
                 </div>
-                
+
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full">
                     <a href="/contact" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 group">
-                        Get Started
+                        Get a Quote
                         <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>

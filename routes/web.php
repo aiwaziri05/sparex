@@ -2,13 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Api\NewsletterController;
+// use App\Http\Controllers\Api\NewsletterController;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Route::get('/about', function () {
-//     return view('about');
-// });
 
 Route::get('/portfolio', [App\Http\Controllers\PortfolioController::class, 'index'])->name('portfolio');
 Route::get('/portfolio/{slug}', [App\Http\Controllers\PortfolioController::class, 'show'])->name('portfolio.show');
@@ -23,5 +19,5 @@ Route::get('/newsletter', function () {
 })->name('newsletter');
 
 // Fallback route for API-style subscription endpoint if routes/api.php is not loaded
-Route::post('/api/subscribe', [NewsletterController::class, 'subscribe'])
-    ->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
+// Route::post('/api/subscribe', [NewsletterController::class, 'subscribe'])
+//     ->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);

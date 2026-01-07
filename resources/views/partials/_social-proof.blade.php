@@ -6,14 +6,14 @@
         <p class="text-gray-500 mt-2 max-w-xl">We support organizations with practical digital solutions from workflow automation to data-driven systems helping teams operate efficiently and scale with confidence.</p>
         <div class="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-start gap-3 w-full">
           <a href="/contact" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-linear-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300 group">
-            Get Started
-            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            Get a Quote
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
           <a href="/portfolio" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-secondary bg-white border-2 border-secondary/10 rounded-xl hover:bg-secondary/5 hover:border-secondary hover:shadow-lg transition-all duration-300 group">
             See Our Work
-            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
@@ -46,12 +46,12 @@
         <div class="logo-slider flex items-center gap-12 animate-logo-scroll py-2">
           @forelse($companyLogos ?? [] as $logo)
             @if($logo->website_url)
-              <a href="{{ $logo->website_url }}" target="_blank" rel="noopener noreferrer">
+              <a href="{{ $logo->website_url }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ $logo->name }} website">
             @endif
             @if(filter_var($logo->logo, FILTER_VALIDATE_URL))
-              <img src="{{ $logo->logo }}" alt="{{ $logo->name }}" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
+              <img src="{{ $logo->logo }}" alt="{{ $logo->name }}" loading="lazy" decoding="async" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
             @else
-              <img src="{{ asset('storage/' . $logo->logo) }}" alt="{{ $logo->name }}" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
+              <img src="{{ asset('storage/' . $logo->logo) }}" alt="{{ $logo->name }}" loading="lazy" decoding="async" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
             @endif
             @if($logo->website_url)
               </a>
@@ -63,12 +63,12 @@
           @if(isset($companyLogos) && count($companyLogos ?? []) > 0)
             @foreach($companyLogos as $logo)
               @if($logo->website_url)
-                <a href="{{ $logo->website_url }}" target="_blank" rel="noopener noreferrer">
+                <a href="{{ $logo->website_url }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ $logo->name }} website">
               @endif
               @if(filter_var($logo->logo, FILTER_VALIDATE_URL))
-                <img src="{{ $logo->logo }}" alt="{{ $logo->name }}" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
+                <img src="{{ $logo->logo }}" alt="{{ $logo->name }}" loading="lazy" decoding="async" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
               @else
-                <img src="{{ asset('storage/' . $logo->logo) }}" alt="{{ $logo->name }}" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
+                <img src="{{ asset('storage/' . $logo->logo) }}" alt="{{ $logo->name }}" loading="lazy" decoding="async" class="h-8 grayscale opacity-80 hover:opacity-100 transition" />
               @endif
               @if($logo->website_url)
                 </a>
