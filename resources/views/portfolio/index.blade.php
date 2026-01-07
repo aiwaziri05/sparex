@@ -57,7 +57,7 @@
                 x-transition:enter-end="opacity-100 transform scale-100"
                 class="portfolio-card group overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300">
                 <!-- Image Area -->
-                <div class="relative h-48 overflow-hidden bg-linear-to-br from-{{ $project->color }}-50 to-{{ $project->color }}-100 group-hover:scale-105 transition-transform duration-500">
+                <div class="relative h-48 overflow-hidden group-hover:scale-105 transition-transform duration-500" style="{{ \App\Helpers\TailwindColorHelper::getGradientBackground($project->color, 50, 100) }}">
                     <!-- Fallback directly to component or image based on what's available. 
                               Since we are ensuring this works, we'll try to use the image assets if they exist, 
                               or a colored placeholder if not. -->
@@ -66,10 +66,10 @@
                     <img src="{{ asset('assets/images/portfolio/' . str_replace('portfolio-', '', $project->image) . '.png') }}"
                         alt="{{ $project->title }}"
                         class="w-full h-full object-cover"
-                        onerror="this.onerror=null; this.parentElement.style.backgroundColor='{{ $project->color === 'blue' ? '#eff6ff' : ($project->color === 'indigo' ? '#eef2ff' : '#f9fafb') }}'; this.style.display='none';">
+                        onerror="this.onerror=null; this.parentElement.style.background='{{ \App\Helpers\TailwindColorHelper::getGradientBackground($project->color, 50, 100) }}'; this.style.display='none';">
                     @else
-                    <div class="w-full h-full flex items-center justify-center bg-{{ $project->color }}-50">
-                        <span class="text-{{ $project->color }}-500 font-bold opacity-20 text-4xl">{{ substr($project->title, 0, 1) }}</span>
+                    <div class="w-full h-full flex items-center justify-center" style="{{ \App\Helpers\TailwindColorHelper::getBackgroundColor($project->color, 50) }}">
+                        <span class="font-bold opacity-20 text-4xl" style="{{ \App\Helpers\TailwindColorHelper::getTextColor($project->color, 500) }}">{{ substr($project->title, 0, 1) }}</span>
                     </div>
                     @endif
 

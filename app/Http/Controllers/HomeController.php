@@ -9,6 +9,7 @@ use App\Models\CompanyLogo;
 use App\Models\SocialMediaLink;
 use App\Models\Project;
 use App\Models\Post;
+use App\Models\Stat;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,6 +21,7 @@ class HomeController extends Controller
         $testimonials = Testimonial::active()->ordered()->get();
         $companyLogos = CompanyLogo::active()->ordered()->get();
         $socialMediaLinks = SocialMediaLink::active()->ordered()->get();
+        $stats = Stat::active()->ordered()->get();
         $projects = Project::published()->where('show_on_homepage', true)->orderBy('published_at', 'desc')->take(6)->get();
         $posts = Post::published()->where('show_on_homepage', true)->orderBy('published_at', 'desc')->take(3)->get();
 
@@ -29,6 +31,7 @@ class HomeController extends Controller
             'testimonials',
             'companyLogos',
             'socialMediaLinks',
+            'stats',
             'projects',
             'posts'
         ));

@@ -13,7 +13,14 @@
         <div class="flex items-center gap-4 pt-2">
             <!-- Social Links -->
             @forelse($socialMediaLinks ?? [] as $link)
-            <a href="{{ $link->url }}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-{{ $link->hover_color ?? 'blue-600' }} hover:text-white transition-all duration-300">
+            @php
+                $hoverColor = $link->hover_color ?? 'blue-600';
+                $hoverColorParts = explode('-', $hoverColor);
+                $hoverColorName = $hoverColorParts[0] ?? 'blue';
+                $hoverColorShade = isset($hoverColorParts[1]) ? (int)$hoverColorParts[1] : 600;
+                $hoverBgHex = \App\Helpers\TailwindColorHelper::getColorHex($hoverColorName, $hoverColorShade) ?? '#2563eb';
+            @endphp
+            <a href="{{ $link->url }}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 social-link" onmouseover="this.style.backgroundColor = '{{ $hoverBgHex }}';" onmouseout="this.style.backgroundColor = '';">
                 @if($link->icon)
                   @if(filter_var($link->icon, FILTER_VALIDATE_URL))
                     <img src="{{ $link->icon }}" alt="{{ $link->platform }}" class="w-5 h-5">

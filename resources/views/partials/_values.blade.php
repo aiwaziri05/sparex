@@ -9,7 +9,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse($coreValues ?? [] as $value)
             <div class="group value-item">
-                <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-{{ $value->color }}-50 to-{{ $value->color }}-100 p-6 h-full transition-all duration-300 hover:shadow-xl">
+                <div class="relative overflow-hidden rounded-2xl p-6 h-full transition-all duration-300 hover:shadow-xl" style="{{ \App\Helpers\TailwindColorHelper::getGradientBackground($value->color, 50, 100) }}">
                     <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: radial-gradient(circle at top right, rgba(2, 132, 199, 0.1), transparent);"></div>
                     <div class="relative z-10">
                         @if($value->icon_svg)

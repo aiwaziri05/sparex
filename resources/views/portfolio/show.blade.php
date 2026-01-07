@@ -9,11 +9,11 @@
         <!-- Background Effects -->
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff1a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff1a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div class="absolute right-0 top-0 -z-10 h-full w-1/2 bg-gradient-to-b from-transparent to-slate-900/50"></div>
-        <div class="absolute inset-0 bg-gradient-to-br from-{{ $project->color }}-500/10 to-transparent"></div>
+        <div class="absolute inset-0" style="{{ \App\Helpers\TailwindColorHelper::getGradientBackgroundWithOpacity($project->color, 500, 500, 0.1) }}"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row gap-4 items-start mb-6">
-                <span class="px-4 py-1.5 rounded-full bg-{{ $project->color }}-500/10 border border-{{ $project->color }}-500/20 text-{{ $project->color }}-400 text-sm font-medium">
+                <span class="px-4 py-1.5 rounded-full border text-sm font-medium" style="{{ \App\Helpers\TailwindColorHelper::getGradientBackgroundWithOpacity($project->color, 500, 500, 0.1) }} {{ \App\Helpers\TailwindColorHelper::getBorderColor($project->color, 500) }} {{ \App\Helpers\TailwindColorHelper::getTextColor($project->color, 400) }}">
                     {{ $project->category }}
                 </span>
                 <div class="flex gap-2">
@@ -60,8 +60,8 @@
                                   onerror="this.onerror=null; this.parentElement.style.backgroundColor='{{ $project->color === 'blue' ? '#eff6ff' : ($project->color === 'indigo' ? '#eef2ff' : '#f9fafb') }}'; this.style.display='none';"
                              >
                          @else
-                            <div class="w-full h-full flex items-center justify-center bg-{{ $project->color }}-50">
-                                <span class="text-{{ $project->color }}-500 font-bold opacity-20 text-6xl">{{ substr($project->title, 0, 1) }}</span>
+                            <div class="w-full h-full flex items-center justify-center" style="{{ \App\Helpers\TailwindColorHelper::getBackgroundColor($project->color, 50) }}">
+                                <span class="font-bold opacity-20 text-6xl" style="{{ \App\Helpers\TailwindColorHelper::getTextColor($project->color, 500) }}">{{ substr($project->title, 0, 1) }}</span>
                             </div>
                          @endif
                     </div>

@@ -8,11 +8,11 @@
     <section class="relative pt-32 pb-20 bg-slate-900 overflow-hidden">
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff1a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff1a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div class="absolute right-0 top-0 -z-10 h-full w-1/2 bg-gradient-to-b from-transparent to-slate-900/50"></div>
-        <div class="absolute inset-0 bg-gradient-to-br from-{{ $post->color }}-500/10 to-transparent"></div>
+        <div class="absolute inset-0" style="{{ \App\Helpers\TailwindColorHelper::getGradientBackgroundWithOpacity($post->color, 500, 500, 0.1) }}"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row gap-4 items-start mb-6">
-                <span class="px-4 py-1.5 rounded-full bg-{{ $post->color }}-500/10 border border-{{ $post->color }}-500/20 text-{{ $post->color }}-400 text-sm font-medium">
+                <span class="px-4 py-1.5 rounded-full border text-sm font-medium" style="{{ \App\Helpers\TailwindColorHelper::getGradientBackgroundWithOpacity($post->color, 500, 500, 0.1) }} {{ \App\Helpers\TailwindColorHelper::getBorderColor($post->color, 500) }} {{ \App\Helpers\TailwindColorHelper::getTextColor($post->color, 400) }}">
                     {{ $post->category }}
                 </span>
                 <div class="flex flex-wrap gap-2">
@@ -110,7 +110,7 @@
                                 @foreach($relatedPosts as $related)
                                     <a href="{{ route('blog.show', $related->slug) }}" class="block group">
                                         <div class="flex items-start gap-3">
-                                            <div class="w-12 h-12 rounded-lg bg-{{ $related->color }}-50 flex items-center justify-center text-{{ $related->color }}-600 font-semibold">
+                                            <div class="w-12 h-12 rounded-lg flex items-center justify-center font-semibold" style="{{ \App\Helpers\TailwindColorHelper::getBackgroundColor($related->color, 50) }} {{ \App\Helpers\TailwindColorHelper::getTextColor($related->color, 600) }}">
                                                 {{ strtoupper(substr($related->title, 0, 1)) }}
                                             </div>
                                             <div>

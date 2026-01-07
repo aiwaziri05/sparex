@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             CompanyLogoSeeder::class,
             TestimonialSeeder::class,
+            StatSeeder::class,
         ]);
     }
 }

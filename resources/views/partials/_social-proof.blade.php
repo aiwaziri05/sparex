@@ -22,21 +22,30 @@
 
       <div class="flex-none w-full md:w-auto">
         <div class="flex flex-wrap md:flex-nowrap items-center gap-4 justify-center md:justify-end">
-          <div class="px-6 py-4 rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-100 to-indigo-200 flex flex-col items-center min-w-[140px] w-full sm:w-auto">
-            <div class="text-xs font-semibold uppercase tracking-wide text-indigo-600 mb-1">Projects</div>
+          @forelse($stats ?? [] as $stat)
+          <div class="px-6 py-4 rounded-2xl border flex flex-col items-center min-w-[140px] w-full sm:w-auto" style="{{ \App\Helpers\TailwindColorHelper::getBorderColor($stat->color, 100) }} {{ \App\Helpers\TailwindColorHelper::getGradientBackground($stat->color, 100, 200) }}">
+            <div class="text-xs font-semibold uppercase tracking-wide mb-1" style="{{ \App\Helpers\TailwindColorHelper::getTextColor($stat->color, 600) }}">{{ $stat->label }}</div>
+            <div class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-0.5">{{ $stat->value }}{{ $stat->suffix ?? '' }}</div>
+            <div class="text-xs text-gray-500">{{ $stat->description ?? '' }}</div>
+          </div>
+          @empty
+          <!-- Fallback stats if none are configured -->
+          <div class="px-6 py-4 rounded-2xl border flex flex-col items-center min-w-[140px] w-full sm:w-auto" style="{{ \App\Helpers\TailwindColorHelper::getBorderColor('indigo', 100) }} {{ \App\Helpers\TailwindColorHelper::getGradientBackground('indigo', 100, 200) }}">
+            <div class="text-xs font-semibold uppercase tracking-wide mb-1" style="{{ \App\Helpers\TailwindColorHelper::getTextColor('indigo', 600) }}">Projects</div>
             <div class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-0.5">150+</div>
             <div class="text-xs text-gray-500">Delivered</div>
           </div>
-          <div class="px-6 py-4 rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-100 to-emerald-200 flex flex-col items-center min-w-[140px] w-full sm:w-auto">
-            <div class="text-xs font-semibold uppercase tracking-wide text-emerald-600 mb-1">Forecast Accuracy</div>
+          <div class="px-6 py-4 rounded-2xl border flex flex-col items-center min-w-[140px] w-full sm:w-auto" style="{{ \App\Helpers\TailwindColorHelper::getBorderColor('emerald', 100) }} {{ \App\Helpers\TailwindColorHelper::getGradientBackground('emerald', 100, 200) }}">
+            <div class="text-xs font-semibold uppercase tracking-wide mb-1" style="{{ \App\Helpers\TailwindColorHelper::getTextColor('emerald', 600) }}">Forecast Accuracy</div>
             <div class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-0.5">94%</div>
             <div class="text-xs text-gray-500">AI-Driven</div>
           </div>
-          <div class="px-6 py-4 rounded-2xl border border-amber-100 bg-gradient-to-br from-amber-100 to-amber-200 flex flex-col items-center min-w-[140px] w-full sm:w-auto">
-            <div class="text-xs font-semibold uppercase tracking-wide text-amber-600 mb-1">Manual Work Reduced</div>
+          <div class="px-6 py-4 rounded-2xl border flex flex-col items-center min-w-[140px] w-full sm:w-auto" style="{{ \App\Helpers\TailwindColorHelper::getBorderColor('amber', 100) }} {{ \App\Helpers\TailwindColorHelper::getGradientBackground('amber', 100, 200) }}">
+            <div class="text-xs font-semibold uppercase tracking-wide mb-1" style="{{ \App\Helpers\TailwindColorHelper::getTextColor('amber', 600) }}">Manual Work Reduced</div>
             <div class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-0.5">85%</div>
             <div class="text-xs text-gray-500">With Automation</div>
           </div>
+          @endforelse
         </div>
       </div>
     </div>
