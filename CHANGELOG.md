@@ -1,5 +1,45 @@
 # Sparex Tech Hub - Changelog
 
+## Session: January 7, 2026
+
+### 🔧 Bug Fixes
+
+#### Homepage "Show on Homepage" Toggle Not Working
+- **Fixed projects and blog posts not appearing on homepage** when toggled
+  - Issue: Homepage partials were rendering static, hard-coded cards instead of consuming `$projects` and `$posts` data from `HomeController`
+  - Solution: Replaced static portfolio and blog card templates with dynamic `@forelse` loops
+  - Now respects `show_on_homepage` boolean field for both projects and posts
+
+#### Missing Cover Images on Homepage Cards
+- **Fixed image rendering for project and blog post cards**
+  - Issue: Homepage partials used incorrect image path logic, didn't handle schematic image names (e.g., `portfolio-analytics`)
+  - Solution: Updated image rendering to strip prefix and construct correct asset paths:
+    - `portfolio-analytics` → `assets/images/portfolio/analytics.png`
+    - `blog-analytics` → `assets/images/blog/analytics.png`
+  - Added `onerror` fallback for graceful image load failures
+
+**Files Modified:**
+- `resources/views/partials/_portfolio.blade.php` - Dynamic project loop with correct image paths
+- `resources/views/partials/_blog.blade.php` - Dynamic post loop with correct image paths
+
+### ♿ Accessibility & Performance Improvements
+
+#### Social Proof Section Enhancements
+- **Added accessibility attributes** to logo carousel and CTAs:
+  - Logo images: Added `loading="lazy"` and `decoding="async"` for performance
+  - Logo links: Added `aria-label` with company name for screen readers
+  - Decorative SVG icons: Added `aria-hidden="true"` and `focusable="false"`
+  
+- **Improved logo carousel usability**:
+  - Links now have descriptive aria-labels (e.g., "Visit [Company] website")
+  - Lazy loading defers image download until visible in viewport
+  - Async decoding prevents blocking main thread
+
+**Files Modified:**
+- `resources/views/partials/_social-proof.blade.php` - Added ARIA labels and lazy loading
+
+---
+
 ## Session: December 9, 2025
 
 ### 🎯 New Features
