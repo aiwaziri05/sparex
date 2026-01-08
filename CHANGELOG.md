@@ -134,6 +134,47 @@
 
 ---
 
+## Session: January 8, 2026
+
+### 🎯 New Features
+
+#### Dynamic Homepage Sections
+- Added `Section` model and migration for dynamic homepage content
+- Created Filament `SectionResource` for admin management (Page Content > Sections)
+- Admin can create, edit, and reorder sections; sections display dynamically on homepage based on `sort_order` and `is_active`
+- Supports multiple types: Hero, Text, Features, etc.
+
+**Files Created:**
+- `app/Models/Section.php`
+- `database/migrations/2026_01_08_094031_create_sections_table.php`
+- `app/Filament/Resources/SectionResource.php`
+- `app/Filament/Resources/SectionResource/Pages/ListSections.php`
+- `app/Filament/Resources/SectionResource/Pages/CreateSection.php`
+- `app/Filament/Resources/SectionResource/Pages/EditSection.php`
+
+**Files Modified:**
+- `app/Http/Controllers/HomeController.php` – Fetches active sections ordered by `sort_order`
+- `resources/views/home.blade.php` – Loops through sections and renders corresponding partials
+
+**Example Section Data:**
+- **Hero Section**: "Welcome to Sparex Tech Hub" – "Innovative Solutions for Modern Businesses" – "We provide top-notch software solutions to help businesses streamline workflow and boost productivity."
+- **Text Section**: "Our Mission" – "Empowering Businesses" – "Our goal is to deliver high-quality, efficient, and scalable software solutions that drive measurable impact."
+- **Features Section**: "What We Offer" – "Comprehensive Services" – "Custom software development, digital transformation, workflow automation, IT consulting, and support services."
+
+**Impact:**
+- Homepage sections are fully dynamic and manageable via admin panel
+- Sections can be reordered or toggled active/inactive without code changes
+
+### 🔧 Bug Fixes
+
+#### Section Model Scopes
+- Added `active()` and `ordered()` scopes to `Section` model to fix homepage rendering errors.
+
+#### Admin Panel Navigation
+- Moved `SectionResource` under **Page Content** panel for consistent admin UI.
+
+---
+
 ## Session: December 9, 2025
 
 ### 🎯 New Features
