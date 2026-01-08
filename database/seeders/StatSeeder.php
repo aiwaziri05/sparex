@@ -13,6 +13,7 @@ class StatSeeder extends Seeder
      */
     public function run(): void
     {
+        \DB::table('stats')->truncate();
         $stats = [
             [
                 'label' => 'Projects',

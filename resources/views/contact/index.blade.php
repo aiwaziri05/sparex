@@ -33,8 +33,8 @@
                             </div>
                             <div>
                                 <h3 class="text-white font-semibold text-lg mb-1">Email Us</h3>
-                                <a href="mailto:hello@sparex.com" class="text-gray-400 hover:text-white transition-colors">info@sparextech.com </a>
-                                <p class="text-sm text-gray-500 mt-1">We'll get back to you within 24 hours.</p>
+                                <a href="mailto:{{ $contactInfo->email }}" class="text-gray-400 hover:text-white transition-colors">{{ $contactInfo->email }}</a>
+                                <p class="text-sm text-gray-500 mt-1">{{ $contactInfo->email_description }}</p>
                             </div>
                         </div>
 
@@ -46,8 +46,8 @@
                             </div>
                             <div>
                                 <h3 class="text-white font-semibold text-lg mb-1">Call Us</h3>
-                                <a href="tel:+15550000000" class="text-gray-400 hover:text-white transition-colors">+234 817 018 0103</a>
-                                <p class="text-sm text-gray-500 mt-1">Mon-Fri from 8am to 5pm EST.</p>
+                                <a href="{{ $contactInfo->phone }}" class="text-gray-400 hover:text-white transition-colors">{{ $contactInfo->phone }}</a>
+                                <p class="text-sm text-gray-500 mt-1">{{ $contactInfo->phone_description }}</p>
                             </div>
                         </div>
 
@@ -60,9 +60,9 @@
                             </div>
                             <div>
                                 <h3 class="text-white font-semibold text-lg mb-1">Address</h3>
-                                <a href="tel:+15550000000" class="text-gray-400 hover:text-white transition-colors">Sour Plaza 1<sup>st</sup> Avenue Gwarimpa, FCT Abuja.
+                                <a href="{{ $contactInfo->address }}" class="text-gray-400 hover:text-white transition-colors">{{ $contactInfo->address }}</
                                 <br>
-                                No. 524 crescent 2nd avenue Gwarimpa Abuja, Nigeria</a>
+                                {{ $contactInfo->address_description }}</a>
                             </div>
                         </div>
                     </div>
@@ -83,6 +83,8 @@
                         </div>
                     </div>
                 </div>
+
+                <p>{{ $contactInfo->email ?? 'Email not set' }}</p>
 
                 <!-- Right: Contact Form -->
                 <div class="relative">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\ContactInfo;
 use App\Notifications\ContactNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
@@ -11,7 +12,8 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return view('contact.index');
+        $contactInfo = ContactInfo::first();
+        return view('contact.index', compact('contactInfo'));
     }
 
     public function store(Request $request)

@@ -14,6 +14,7 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
+        \DB::table('posts')->truncate();
         $posts = [
             [
                 'slug' => 'future-of-data-driven-decisions',

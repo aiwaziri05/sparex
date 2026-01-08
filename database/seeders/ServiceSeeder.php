@@ -13,6 +13,7 @@ class ServiceSeeder extends Seeder
      */
     public function run(): void
     {
+        \DB::table('services')->truncate();
         $services = [
             [
                 'title' => 'Custom Software Development',

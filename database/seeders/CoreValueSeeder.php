@@ -13,6 +13,7 @@ class CoreValueSeeder extends Seeder
      */
     public function run(): void
     {
+        \DB::table('core_values')->truncate();
         $coreValues = [
             [
                 'title' => 'Innovation',

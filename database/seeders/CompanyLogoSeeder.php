@@ -13,6 +13,7 @@ class CompanyLogoSeeder extends Seeder
      */
     public function run(): void
     {
+        \DB::table('company_logos')->truncate();
         $companyLogos = [
             [
                 'name' => 'Microsoft',

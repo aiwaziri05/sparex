@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             CompanyLogoSeeder::class,
             TestimonialSeeder::class,
             StatSeeder::class,
+            ContactInfoSeeder::class,
         ]);
     }
 }

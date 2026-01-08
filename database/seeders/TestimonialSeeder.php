@@ -13,6 +13,7 @@ class TestimonialSeeder extends Seeder
      */
     public function run(): void
     {
+        \DB::table('testimonials')->truncate();
         $testimonials = [
             [
                 'name' => 'Mark Davis',
