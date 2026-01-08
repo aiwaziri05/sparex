@@ -134,7 +134,7 @@
 
 ---
 
-## Session: January 8, 2026
+## Session: January 8, 2026 (Afternoon)
 
 ### 🎯 New Features
 
@@ -172,6 +172,51 @@
 
 #### Admin Panel Navigation
 - Moved `SectionResource` under **Page Content** panel for consistent admin UI.
+
+---
+
+Session: January 8, 2026 (Evening)
+
+🎯 New Features
+
+Dynamic Contact Information
+Added ContactInfo model and migration to manage contact details dynamically  
+Created ContactInfoSeeder to seed default contact information  
+Implemented Filament ContactInfoResource for admin management (Page Content > Contact Info)  
+Admin can edit email, phone number, address, and helper text directly from dashboard  
+Contact page now renders contact information dynamically from the database  
+Removed hardcoded contact data from frontend views
+
+Files Created:
+- app/Models/ContactInfo.php
+- database/migrations/2026_01_08_xxxxxx_create_contact_infos_table.php
+- database/seeders/ContactInfoSeeder.php
+- app/Filament/Resources/ContactInfoResource.php
+- app/Filament/Resources/ContactInfoResource/Pages/ListContactInfos.php
+- app/Filament/Resources/ContactInfoResource/Pages/EditContactInfo.php
+
+Files Modified:
+- app/Http/Controllers/ContactController.php
+- resources/views/contact/index.blade.php
+
+Impact:
+- Contact details are fully manageable via admin panel
+- UI updates instantly without code changes
+- Improves maintainability and content flexibility
+
+🔧 Bug Fixes
+
+Seeder Duplicate Entry Error
+Fixed repeated database seeding failures caused by unique constraint violations  
+Resolved issue where seeders attempted to insert records that already existed in the database  
+Applied table truncation before seeding to ensure a clean state:
+`\DB::table('projects')->truncate();`
+(and other affected tables)
+
+Impact:
+- Prevents duplicate slug and email constraint errors
+- Allows `php artisan db:seed` to run safely multiple times
+- Ensures consistent and predictable seed data
 
 ---
 
