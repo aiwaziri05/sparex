@@ -10,6 +10,7 @@ use App\Models\SocialMediaLink;
 use App\Models\Project;
 use App\Models\Post;
 use App\Models\Stat;
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,7 +25,7 @@ class HomeController extends Controller
         $stats = Stat::active()->ordered()->get();
         $projects = Project::published()->where('show_on_homepage', true)->orderBy('published_at', 'desc')->take(6)->get();
         $posts = Post::published()->where('show_on_homepage', true)->orderBy('published_at', 'desc')->take(3)->get();
-
+        $sections = Section::active()->ordered()->get();
         return view('home', compact(
             'coreValues',
             'services',
@@ -33,7 +34,8 @@ class HomeController extends Controller
             'socialMediaLinks',
             'stats',
             'projects',
-            'posts'
+            'posts',
+            'sections'
         ));
     }
 }
