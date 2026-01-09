@@ -1,42 +1,57 @@
 <!-- Fixed Social Media Panel (Desktop Only) -->
 <div class="hidden lg:flex fixed left-0 top-1/2 -translate-y-1/2 z-40">
-  <!-- Minimal elegant panel attached to left edge -->
-  <div class="social-panel-container">
-    <!-- Top divider line -->
-    <div class="social-divider-top"></div>
+    <!-- Minimal elegant panel attached to left edge -->
+    <div class="social-panel-container">
+        <!-- Top divider line -->
+        <div class="social-divider-top"></div>
+        <!-- Social links -->
+        <div class="social-links-wrapper">
+            @forelse($socialMediaLinks ?? [] as $link)
+            @php
+            $hoverColor = $link->hover_color ?? 'blue-600';
+            $hoverColorParts = explode('-', $hoverColor);
+            $hoverColorName = $hoverColorParts[0] ?? 'blue';
+            $hoverColorShade = isset($hoverColorParts[1]) ? (int)$hoverColorParts[1] : 600;
+            $hoverBgHex = \App\Helpers\TailwindColorHelper::getColorHex($hoverColorName, $hoverColorShade) ?? '#2563eb';
+            @endphp
+            <a href="{{ $link->url }}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 social-link" onmouseover="this.style.backgroundColor = '{{ $hoverBgHex }}';" onmouseout="this.style.backgroundColor = '';">
+                @if($link->icon)
+                @if(filter_var($link->icon, FILTER_VALIDATE_URL))
+                <img src="{{ $link->icon }}" alt="{{ $link->platform }}" class="w-5 h-5">
+                @else
+                <img src="{{ asset('storage/' . $link->icon) }}" alt="{{ $link->platform }}" class="w-5 h-5">
+                @endif
+                @else
+                <!-- Default icons based on platform -->
+                @if($link->platform === 'facebook')
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                </svg>
+                @elseif($link->platform === 'twitter')
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                </svg>
+                @elseif($link->platform === 'instagram')
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465.957-.043 1.318-.06 2.427-.06h.08c.958 0 1.319.013 2.427.06H12.315zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" clip-rule="evenodd"></path>
+                </svg>
+                @elseif($link->platform === 'linkedin')
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path>
+                </svg>
+                @else
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                </svg>
+                @endif
+                @endif
+            </a>
+            @empty
+            <!-- No social media links -->
+            @endforelse
+        </div>
 
-    <!-- Social links -->
-    <div class="social-links-wrapper">
-      <!-- Facebook -->
-      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Follow on Facebook" data-tooltip="Facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-        </svg>
-      </a>
-
-      <!-- LinkedIn -->
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Connect on LinkedIn" data-tooltip="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
-        </svg>
-      </a>
-
-      <!-- Instagram -->
-      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Follow on Instagram" data-tooltip="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.117.6c-.788.306-1.459.717-2.126 1.384S.957 2.906.67 3.897c-.266.786-.47 1.656-.53 2.93C.085 8.333.07 8.74.07 12s.015 3.667.072 4.947c.06 1.277.261 2.148.53 2.91.306.788.717 1.459 1.384 2.126.667.667 1.339 1.078 2.126 1.384.766.266 1.636.471 2.91.53C8.333 23.915 8.74 23.93 12 23.93s3.667-.015 4.947-.072c1.277-.06 2.148-.261 2.91-.53.788-.306 1.459-.717 2.126-1.384.667-.667 1.078-1.339 1.384-2.126.266-.766.471-1.636.53-2.91.058-1.277.072-1.694.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.261-2.148-.53-2.91-.306-.788-.717-1.459-1.384-2.126C21.319 1.347 20.651.935 19.842.63c-.765-.266-1.636-.471-2.91-.53C15.667.085 15.26.07 12 .07zm0 2.16c3.203 0 3.585.009 4.849.07 1.171.054 1.805.244 2.227.408.561.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.354 1.057.408 2.227.061 1.264.07 1.645.07 4.849 0 3.205-.009 3.584-.07 4.849-.054 1.171-.244 1.805-.408 2.227-.217.561-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.056.354-2.227.408-1.264.061-1.645.07-4.849.07-3.204 0-3.584-.009-4.849-.07-1.171-.054-1.805-.244-2.227-.408-.561-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.354-1.056-.408-2.227-.061-1.264-.07-1.645-.07-4.849 0-3.204.009-3.584.07-4.849.054-1.171.244-1.805.408-2.227.217-.561.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.056-.354 2.227-.408 1.264-.061 1.645-.07 4.849-.07zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z" />
-        </svg>
-      </a>
-
-      <!-- WhatsApp -->
-      <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="social-link" title="Chat on WhatsApp" data-tooltip="WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.897 1.207l-.351.19-3.625-.952.968 3.559-.235.364a9.849 9.849 0 001.516 5.231c2.587 3.283 6.804 5.332 11.522 5.332 5.396 0 9.747-3.636 10.404-8.14.987-6.775-5.48-12.559-12.882-12.559z" />
-        </svg>
-      </a>
+        <!-- Bottom divider line -->
+        <div class="social-divider-bottom"></div>
     </div>
-
-    <!-- Bottom divider line -->
-    <div class="social-divider-bottom"></div>
-  </div>
 </div>
